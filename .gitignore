@@ -1,0 +1,17 @@
+## Python stuff
+**/*pycache*
+*.pyc
+**/.pytest_cache
+**/venv
+.env
+**/.mypy_cache
+**/*.egg-info
+
+.vscode
+.devcontainer
+
+old/
+pocs/
+
+## MacOS
+**/.DS_Store

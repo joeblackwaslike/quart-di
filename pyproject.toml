@@ -1,0 +1,83 @@
+[tool.poetry]
+name = "quart-di"
+version = "0.4.1"
+description = ""
+authors = ["Joe Black <me@joeblack.nyc>"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Web Environment",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/joeblackwaslike/quart-di/"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+quart = "^0.17"
+pydantic = "^1.9"
+typing-extensions = "^4.1"
+python-dotenv = "^0.20"
+python-json-logger = "^2.0"
+greenlet = "^1.1"
+di = {version = "^0.69", extras = ["anyio"]}
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.1"
+pylint = "^2.13"
+black = "^22.3"
+flake8 = "^4.0"
+pytest-mock = "^3.7"
+hypercorn = "^0.13"
+ipython = "^7.32"
+pyproject-flake8 = "^0.0.1-alpha.3"
+pytest-env = "^0.6"
+pytest-asyncio = {url = "https://github.com/joeblackwaslike/pytest-asyncio/releases/download/v0.18.post3/pytest_asyncio-0.18.post3-py3-none-any.whl#egg=pytest-asyncio"}
+sqlmodel = "^0.0.6"
+SQLAlchemy = "~1.4.35"
+aiosqlite = "^0.17"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
+src_paths = ["quart_di", "tests", "pocs", "old"]
+force_single_line = true
+use_parentheses = true
+atomic = true
+lines_after_imports = 2
+line_length = 100
+order_by_type = false
+known_first_party = ["tests", "quart_di"]
+
+[tool.black]
+exclude = '''
+/(
+    \.git
+  | \.mypy_cache
+)/
+'''
+line_length = 100
+safe = true
+
+[tool.pylint]
+disable = "E203,E231,E501,W503,W504,C0114,C0115,C0116"
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests"]
+norecursedirs = [".vscode", "old", "pocs", "*.egg-info", ".git", ".pytest_cache"]
+addopts = "-p no:cacheprovider --asyncio-mode=auto"
+env = ["PYTHONHASHSEED=0"]

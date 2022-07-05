@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "/Users/joeblack/projects/github/joeblackwaslike/quart-di"
+		}
+	],
+	"settings": {
+		"python.venvPath": "~/Library/Caches/pypoetry/virtualenvs",
+		"python.formatting.provider": "black",
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": true
+		},
+		"python.linting.pylintEnabled": true,
+		"python.linting.flake8Enabled": true,
+		"python.envFile": "${workspaceFolder}/.env",
+		"python.terminal.activateEnvironment": true,
+		"python.terminal.activateEnvInCurrentTerminal": true,
+		"pythonTestExplorer.testFramework": "pytest",
+		"python.testing.pytestEnabled": true
+	}
+}
